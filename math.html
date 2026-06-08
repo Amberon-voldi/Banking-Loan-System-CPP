@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Math Functions - max, min, clamp</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        /* MAX Function */
+        .max-box {
+            width: max(50%, 300px);
+            background: #ff6b6b;
+            color: white;
+            padding: 2rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        /* MIN Function */
+        .min-box {
+            width: min(100%, 500px);
+            background: #4ecdc4;
+            color: white;
+            padding: 2rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        /* CLAMP Function */
+        .clamp-box {
+            width: clamp(200px, 50vw, 800px);
+            background: #45b7d1;
+            color: white;
+            padding: 2rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .demo-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 4px;
+            border-left: 4px solid #667eea;
+        }
+
+        .demo-item h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: clamp(1rem, 2vw, 1.5rem);
+        }
+
+        .demo-item p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .code {
+            background: #2d3748;
+            color: #68d391;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+        }
+
+        .responsive-box {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: clamp(1rem, 2vw, 2rem);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Math Functions Demo</h1>
+
+        <div class="section">
+            <h2>max() Function</h2>
+            <p>Selects the largest value. Useful for setting minimum sizes responsively.</p>
+            <div class="max-box">
+                Width: max(50%, 300px) - At least 300px or 50% of container
+            </div>
+            <div class="code">width: max(50%, 300px);</div>
+        </div>
+
+        <div class="section">
+            <h2>min() Function</h2>
+            <p>Selects the smallest value. Useful for setting maximum sizes responsively.</p>
+            <div class="min-box">
+                Width: min(100%, 500px) - Maximum 500px or 100% of container
+            </div>
+            <div class="code">width: min(100%, 500px);</div>
+        </div>
+
+        <div class="section">
+            <h2>clamp() Function</h2>
+            <p>Sets a value between a minimum and maximum. Perfect for responsive designs.</p>
+            <div class="clamp-box">
+                Width: clamp(200px, 50vw, 800px) - Between 200px and 800px
+            </div>
+            <div class="code">width: clamp(200px, 50vw, 800px);</div>
+        </div>
+
+        <div class="section">
+            <h2>Responsive Page Layout</h2>
+            <p>Combining all functions for a truly responsive page:</p>
+            <div class="responsive-box">
+                This box uses clamp() for both padding and font-size, making it fluid across all screen sizes
+            </div>
+            <div class="demo-grid">
+                <div class="demo-item">
+                    <h3>Flexible Typography</h3>
+                    <p>Font sizes scale smoothly between minimum and maximum values</p>
+                    <div class="code">font-size: clamp(0.9rem, 1.5vw, 1.2rem);</div>
+                </div>
+                <div class="demo-item">
+                    <h3>Smart Spacing</h3>
+                    <p>Padding adapts to viewport while staying within bounds</p>
+                    <div class="code">padding: clamp(1rem, 2vw, 2rem);</div>
+                </div>
+                <div class="demo-item">
+                    <h3>Responsive Width</h3>
+                    <p>Width stays between constraints and adapts to screen</p>
+                    <div class="code">width: min(100%, 1200px);</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

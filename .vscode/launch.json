@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/mac/Development/repos/Banking-Loan-System-CPP/src",
+      "program": "/Users/mac/Development/repos/Banking-Loan-System-CPP/src/build/Debug/outDebug"
+    }
+  ]
+}
